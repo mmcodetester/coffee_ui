@@ -1,6 +1,9 @@
 import 'package:coffee_ui/model/coffee_model.dart';
+import 'package:coffee_ui/ui/sections/header_section.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+
+import 'sections/get_single_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,27 +26,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //header
-                Container(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GFIconButton(
-                          shape: GFIconButtonShape.circle,
-                          tooltip: 'menu item',
-                          hoverColor: Colors.transparent,
-                          color: GFColors.DARK,
-                          icon: const Icon(Icons.menu_sharp),
-                          onPressed: () {}),
-                      const GFAvatar(
-                        shape: GFAvatarShape.standard,
-                        radius: 20.0,
-                        backgroundImage: NetworkImage(
-                            'https://assets.survivalinternational.org/pictures/489/4116455578-1f8d781f66-b_screen.jpg'),
-                      )
-                    ],
-                  ),
-                ),
+                const HeaderSection(),
                 //end header
 
                 //title
@@ -142,59 +125,69 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 20, left: 20),
-                        child: Container(
-                          decoration: const BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20.0)),
-                              color: Colors.black54),
-                          constraints: BoxConstraints(
-                              maxWidth: MediaQuery.of(context).size.width * 0.2,
-                              maxHeight:
-                                  MediaQuery.of(context).size.width * 0.49),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  child: Image.asset(
-                                    'images/coffee4.jpg',
-                                    fit: BoxFit.cover,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MyWidget()),
+                            );
+                          },
+                          child: Container(
+                            decoration: const BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20.0)),
+                                color: Colors.black54),
+                            constraints: BoxConstraints(
+                                maxWidth:
+                                    MediaQuery.of(context).size.width * 0.2,
+                                maxHeight:
+                                    MediaQuery.of(context).size.width * 0.49),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                    child: Image.asset(
+                                      'images/coffee4.jpg',
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(left: 10),
-                                child: Text('Cappuccino'),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(left: 12, top: 5),
-                                child: Text(
-                                  'With oak milk',
-                                  style: TextStyle(fontSize: 12),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 10),
+                                  child: Text('Cappuccino'),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    const Text(
-                                      '\$120',
-                                      style: TextStyle(color: Colors.amber),
-                                    ),
-                                    GFIconButton(
-                                      color: GFColors.WARNING,
-                                      icon: const Icon(Icons.add),
-                                      onPressed: () {},
-                                    )
-                                  ],
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 12, top: 5),
+                                  child: Text(
+                                    'With oak milk',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
                                 ),
-                              )
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const Text(
+                                        '\$120',
+                                        style: TextStyle(color: Colors.amber),
+                                      ),
+                                      GFIconButton(
+                                        color: GFColors.WARNING,
+                                        icon: const Icon(Icons.add),
+                                        onPressed: () {},
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
