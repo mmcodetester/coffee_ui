@@ -124,11 +124,11 @@ class _MyWidgetState extends State<MyWidget> {
                                     child: Column(
                                       children: const [
                                         Icon(
-                                          Icons.coffee_maker_outlined,
+                                          Icons.tapas_outlined,
                                           color: Colors.brown,
                                         ),
                                         Text(
-                                          "Coffee",
+                                          "Milk",
                                           style: TextStyle(color: Colors.brown),
                                         )
                                       ],
@@ -138,6 +138,37 @@ class _MyWidgetState extends State<MyWidget> {
                               )
                             ],
                           ),
+                          Row(children: const [
+                            Padding(
+                              padding: EdgeInsets.only(left: 20.0),
+                              child: Text("With Oak Milk"),
+                            )
+                          ]),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Row(children: [
+                            const Expanded(
+                              flex: 4,
+                              child: Padding(
+                                padding: EdgeInsets.only(left: 20.0),
+                                child: Text("\$1 (or) 1200 MMK"),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 25.0),
+                              child: GFButton(
+                                color: GFColors.DARK.withOpacity(0.7),
+                                type: GFButtonType.solid,
+                                shape: GFButtonShape.standard,
+                                onPressed: () {},
+                                child: const Text("Medium Roasted"),
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 35,
+                            )
+                          ])
                         ],
                       ),
                     )
