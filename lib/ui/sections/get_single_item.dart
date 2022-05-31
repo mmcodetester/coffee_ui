@@ -54,7 +54,7 @@ class _MyWidgetState extends State<MyWidget> {
                     ),
                     Container(
                       padding: EdgeInsets.zero,
-                      height: size.height * 0.389,
+                      height: size.height * 0.38,
                       //color: Colors.white,
                       child: const SizedBox(),
                     ),
@@ -145,7 +145,7 @@ class _MyWidgetState extends State<MyWidget> {
                             )
                           ]),
                           const SizedBox(
-                            height: 10,
+                            height: 7,
                           ),
                           Row(children: [
                             const Expanded(
