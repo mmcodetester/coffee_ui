@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getwidget/components/button/gf_icon_button.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:readmore/readmore.dart';
 
 class MyWidget extends StatefulWidget {
   const MyWidget({Key? key}) : super(key: key);
@@ -184,6 +184,70 @@ class _MyWidgetState extends State<MyWidget> {
               //     )
               //   ],
               // ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: Text('Description'),
+                  ),
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.only(top: 5.0, left: 25.0, right: 25.0),
+                child: ReadMoreText(
+                  'A cappucciono is a coffee-based drink made primarily from expresso and milk,A cappucciono is a coffee-based drink made primarily from expresso and milk',
+                  //trimLength: 20,
+                  trimLines: 2,
+                  colorClickableText: Colors.pink,
+                  trimMode: TrimMode.Line,
+                  trimCollapsedText: '...Show more',
+                  trimExpandedText: ' show less',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GFButton(
+                    color: Colors.brown,
+                    type: GFButtonType.outline,
+                    onPressed: () {},
+                    child: const Text(
+                      "S",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  GFButton(
+                    color: Colors.black.withOpacity(0.3),
+                    type: GFButtonType.outline,
+                    onPressed: () {},
+                    child: const Text(
+                      "M",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  GFButton(
+                    color: Colors.black.withOpacity(0.3),
+                    type: GFButtonType.outline,
+                    onPressed: () {},
+                    child: const Text(
+                      "L",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  )
+                ],
+              )
+              // const ListTile(
+              //   subtitle: Text(
+              //       'A cappucciono is a coffee-based drink made primarily from expresso and milk'),
+              //   trailing: Text('...'),
+              // )
             ],
           );
         }),
